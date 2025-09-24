@@ -1,11 +1,8 @@
 const Router = require('express')
 const router = new Router()
+const typeController = require('..//controllers/typeController')
 
-router.post('/', (req, res) => {
-    res.json({message: 'New type successfully created'})
-})
-router.get('/', (req, res) => {
-    res.json({message: 'Types retrieved successfully'})
-})
+router.post('/', typeController.create)
+router.get('/', typeController.getAll)
 
 module.exports = router

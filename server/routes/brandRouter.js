@@ -1,11 +1,9 @@
 const Router = require('express')
 const router = new Router()
+const brandController = require('..//controllers/brandController')
 
-router.post('/',(req, res) => {
-    res.json({message: 'Brand created successfully'})
-})
-router.get('/',(req, res) => {
-    res.json({message: 'List of all brands'})
-})
+router.post('/',brandController.create)
+router.get('/', brandController.getAll)
+router.delete('/:id', brandController.delete)
 
 module.exports = router
